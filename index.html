@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transpiration in plants</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <div class="hero">
+        <nav>
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <button type="button">Siddanth</button>
+            <img src="menu.png" class="menu-icon">
+        </nav>
+
+        <div class="row"> 
+            <div class="col-1">
+            <h1>Explore <br> My Activity</h1>
+            <p>You Can Explore My Activity For Transpiration In Plants. Click On The Button Below For A Surprise. Click On The Dots For The Images.</p>
+            <button type="button" onclick="start()">Explore Activity</button>
+
+            <ul>
+                <li class="btn active"></li>
+                <li class="btn"></li>
+                <li class="btn"></li>
+                <li class="btn"></li>
+            </ul>
+        </div>
+
+        <div class="col-2">
+            <img src="pic_1.jpg" id="banner">
+        </div>
+    </div>
+       
+    </div>
+
+    <script>
+        var btn = document.getElementsByClassName("btn");
+        var banner = document.getElementById("banner");
+
+btn[0].onclick = function(){
+    banner.src = "pic_1.jpg";
+    animation();
+    this.classList.add("active");
+}
+
+btn[1].onclick = function(){
+    banner.src = "pic_2.jpg";
+    animation();
+    this.classList.add("active");
+}
+
+btn[2].onclick = function(){
+    banner.src = "pic_3.jpg";
+    animation();
+    this.classList.add("active");
+}
+
+btn[3].onclick = function(){
+    banner.src = "pic_4.jpg";
+    animation();
+    this.classList.add("active");
+}
+
+function animation(){
+    
+    banner.classList.add("zoom");
+
+    setTimeout(function(){
+        banner.classList.remove("zoom");
+    },500);
+
+    for(b of btn){
+        b.classList.remove("active")
+    }
+}
+    </script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display="none"
+        })
+    </script>
+</body>
+</html>
